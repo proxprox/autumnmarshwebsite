@@ -28,4 +28,4 @@ def monsterPage(request):
 def itemsPage(request):
     template = 'items.html'
     context = {'items':Item.objects.all(),'items.name':Item.name,'item.description':Item.description}
-    return(render,template,context)
+    return render(request,template,context)
