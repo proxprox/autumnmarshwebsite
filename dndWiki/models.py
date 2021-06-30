@@ -27,5 +27,7 @@ class Recap(models.Model):
 class Items(models.Model):
     name = models.CharField(max_length=200,null=True)
     description = models.TextField(null=True)
+    def __str__(self):
+        return self.name
 
 
