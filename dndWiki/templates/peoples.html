@@ -2,7 +2,7 @@
 <body style = "background-color:#242D43;text-align:Center">
 <h1><a href="/" style="color:#FFFFFF">Notable Peoples</a></h1>
 <font size="4">
-{% for person in peoples %}
+{% for person in peoples|dictsort:"name.lower" %}
         <font size = '6'>
 <p style="text-decoration:underline">{{ person.name }}</p>
         </font>
