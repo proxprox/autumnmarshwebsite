@@ -29,3 +29,14 @@ def itemsPage(request):
     template = 'items.html'
     context = {'items':Item.objects.all(),'items.name':Item.name,'item.description':Item.description}
     return render(request,template,context)
+
+def enemySearch(request):
+    monsterName = request.GET['enemyName']
+    searchedEnemy = Monster.objects.get(name__iexact=monsterName)
+    template = 'enemySearch.html'
+    context = {
+        'monsterName':searchedEnemy.name,
+        'monsterDescription':searchedEnemy.description,
+    }
+    return render(request,template,context)
+
